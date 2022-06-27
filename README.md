@@ -38,7 +38,7 @@ Stretch goals:
 - Interactivity capabilities with globe (geo-location enabled)
 - Login w/ auth
 - GET posts by country
-- User can like/comment on a post
+- User can like/comment on a post, or create a new post of their own
 - Categorize posts by accommodations, restaurants, experiences associated with each country
 - Posts include text and images
 - Acquire domain name/host with AWS
