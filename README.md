@@ -54,4 +54,4 @@ Lowest priority:
 - Thumbnail pop-ups on globe showing the traveller's profile photo
 - See only photos for selected location
 - Search reviews for keywords
-- User account page to show activity (liked/commented-on posts)
+- User account page to show activity (my posts + liked/commented-on posts)
