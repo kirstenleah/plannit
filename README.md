@@ -55,3 +55,4 @@ Lowest priority:
 - See only photos for selected location
 - Search reviews for keywords
 - User account page when logged in to show activity (my posts + liked/commented-on posts)
+- Hashtags
