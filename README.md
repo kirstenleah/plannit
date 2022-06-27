@@ -29,7 +29,7 @@ Stretch goals:
 - Globe shows little pop-ups with snippets from posts when landing on a location after spinning the globe (featured pop-ups may be random, or generated based on popularity of interactions, meaning the most likes/comments)
 - Hashtags
 - Save favorited posts to personal account history when logged in
-- See detailed
+- See details for reviewed places/businesses
 - Custom logo by me
 - Extensive library of user posts for most countries, so that when a user spins the globe and lands on any country, they can see at least some content
 
