@@ -1,10 +1,15 @@
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
-import Globe from "react-globe.gl";
+import Home from "./Home";
 
 function App() {
   return (
     <div className="App">
-      <Globe />
+      <Router>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Router>
     </div>
   );
 }
