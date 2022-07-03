@@ -1,3 +1,9 @@
+/*
+Globe object created by Vasco Asturiano (github username: vasturiano)
+react-globe.gl repo: https://github.com/vasturiano/react-globe.gl
+License: https://github.com/vasturiano/react-globe.gl/blob/master/LICENSE
+*/
+
 import React, { useEffect, useState, useRef } from "react";
 import Globe from "react-globe.gl";
 
