@@ -35,9 +35,9 @@ function Home() {
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
         atmosphereColor={"#FFFFFF"}
         // lineHoverPrecision={0}
-        polygonAltitude={(d) => (d === hover ? 0.06 : 0.02)}
-        polygonCapColor={(d) => (d === hover ? "steelblue" : "pink")}
-        polygonSideColor={() => "rgba(0, 100, 0, 0.15)"}
+        polygonAltitude={(d) => (d === hover ? 0.04 : 0.01)}
+        polygonCapColor={(d) => (d === hover ? "#ee81b0d1" : "#fefefe00")}
+        polygonSideColor={() => "rgba(0, 30, 0, 0.15)"}
         polygonStrokeColor={() => "#6f6f6f"}
         polygonsTransitionDuration={300}
         onPolygonHover={setHover}

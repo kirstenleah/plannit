@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <center>
-        <h1>Plannit</h1>
+        <h1>plannit</h1>
       </center>
       <Router>
         <HeaderNavBar />
