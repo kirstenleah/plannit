@@ -10,16 +10,19 @@ import Globe from "react-globe.gl";
 function Home() {
   const [countries, setCountries] = useState({ features: [] });
   const [hover, setHover] = useState();
-  //   const myGlobe = useRef();
+
+  //   const globeEl = useRef();
+
   const geoJson = "http://127.0.0.1:3000/countries";
   useEffect(() => {
     fetch(geoJson)
       .then((r) => r.json())
       .then(setCountries);
-    // const globe = myGlobe.current;
-    // globe.controls().autoRotate = true;
-    // globe.controls().autoRotateSpeed = 0.4;
   }, []);
+
+  //   const globe = globeEl.current;
+
+  console.log(countries);
 
   const countryNames = countries.features.map((d) => d.properties.ADMIN);
 
