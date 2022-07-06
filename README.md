@@ -3,6 +3,13 @@ Name TBD
 
 *A social media app for travellers to share the best of the best from their adventures around the world.*
 
+To use: 
+
+1. Globe will not render with any React version after v.17
+2. Install nvm
+3. nvm install node v.16.15.1
+4. Ruby environment setup
+
 **Home: A draggable globe with geo-location enabled to spin/land on a random country, + a search option**
 <img width="1128" alt="image" src="https://user-images.githubusercontent.com/99378787/176017557-7619ab4b-2ed8-4cc0-9656-be642c0583b3.png">
 
