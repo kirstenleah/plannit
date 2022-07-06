@@ -5,29 +5,40 @@ License: https://github.com/vasturiano/react-globe.gl/blob/master/LICENSE
 */
 
 import React, { useEffect, useState, useRef } from "react";
+import { useHistory, useNavigate } from "react-router-dom";
 import Globe from "react-globe.gl";
+import Country from "./Country";
 
 function Home() {
   const [countries, setCountries] = useState({ features: [] });
   const [hover, setHover] = useState();
 
-  //   const globeEl = useRef();
+  const globeEl = useRef();
 
   const geoJson = "http://127.0.0.1:3000/countries";
   useEffect(() => {
     fetch(geoJson)
       .then((r) => r.json())
       .then(setCountries);
+
+    // const globe = globeEl.current;
+    // console.log(globe);
+    // globe.controls().rotateSpeed = 3;
   }, []);
 
-  //   const globe = globeEl.current;
-
-  console.log(countries);
+  //   console.log(countries);
 
   const countryNames = countries.features.map((d) => d.properties.ADMIN);
+  const history = useHistory();
 
   function handleClick(e) {
-    console.log(e.properties.ADMIN);
+    let countryName = e.properties.ADMIN;
+    let countryCode = e.properties.ISO_A2;
+    console.log(countryName);
+    history.push({
+      pathname: "/country",
+      state: { country: countryName, countryCode: countryCode },
+    });
   }
 
   return (

@@ -9,15 +9,5 @@
     "clean": "rm -rf public",
     "deploy": "cp -a client/build/. public/",
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
-  },
-  "dependencies": {
-    "@react-three/cannon": "^6.3.0",
-    "data.js": "^0.12.11",
-    "n": "^8.2.0",
-    "react-globe": "^5.0.2",
-    "react-globe.gl": "^2.22.1",
-    "react-router-dom": "^5.2.0",
-    "stable": "^0.1.8",
-    "three": "^0.141.0"
   }
 }
