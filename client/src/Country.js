@@ -10,6 +10,11 @@ function Country({ country }) {
     <div>
       <div className="country-header">{location.state.country.toUpperCase()}</div>
       <h2>{location.state.countryCode}</h2>
+      <div className="filter-posts-buttons-container">
+        <button className="filter-btn">LODGING</button>
+        <button className="filter-btn">FOOD</button>
+        <button className="filter-btn">EXPERIENCES</button>
+      </div>
       <div className="post-container">
         <div className="post-card">
           <h2 className="post-user-name">Lucy</h2>

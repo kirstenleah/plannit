@@ -8,9 +8,9 @@ import LogIn from "./LogIn";
 function App() {
   return (
     <div className="App">
-      <center>
+      {/* <center>
         <h1>plannit</h1>
-      </center>
+      </center> */}
       <Router>
         <HeaderNavBar />
         <Switch>

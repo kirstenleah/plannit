@@ -2,11 +2,13 @@ import { NavLink } from "react-router-dom";
 
 function HeaderNavBar() {
   return (
-    <nav>
+    <nav className="nav-container">
       <NavLink exact to="/" style={{ textDecoration: "none" }}>
-        HOME
+        <h1>plannit</h1>
       </NavLink>
-      <NavLink to="/login">LOGIN</NavLink>
+      <NavLink to="/login">
+        <button className="login-nav-btn">LOGIN</button>
+      </NavLink>
     </nav>
   );
 }
