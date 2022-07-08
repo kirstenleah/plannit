@@ -26,7 +26,7 @@ function Home() {
     // globe.controls().rotateSpeed = 3;
   }, []);
 
-  //   console.log(countries);
+  // console.log(countries);
 
   const countryNames = countries.features.map((d) => d.properties.ADMIN);
   const history = useHistory();

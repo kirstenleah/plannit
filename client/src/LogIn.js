@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 // import { setQuaternionFromProperEuler } from "three/src/math/MathUtils";
 
 function LogIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState([]);
-  //   const history = useHistory();
+  const history = useHistory();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -26,7 +26,7 @@ function LogIn() {
       if (res.ok) {
         res.json().then((user) => {
           setUsername(user);
-          //   history.push("/");
+          history.push("/");
         });
       } else {
         res.json().then((json) => setError(json.error, error));

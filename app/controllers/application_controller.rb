@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
 rescue_from ActiveRecord::RecordNotFound, with: :not_found
-rescue_from ActiveRecord::RecordInvalid, with: :RecordInvalid
-# before_action :authorized
+rescue_from ActiveRecord::RecordInvalid, with: :invalid
+before_action :authorized
 
 def authorized
   return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id

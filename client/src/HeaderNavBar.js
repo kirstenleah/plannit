@@ -7,7 +7,7 @@ function HeaderNavBar() {
         <h1>plannit</h1>
       </NavLink>
       <NavLink to="/login">
-        <button className="login-nav-btn">LOGIN</button>
+        <button className="login-nav-btn">LOG IN</button>
       </NavLink>
     </nav>
   );

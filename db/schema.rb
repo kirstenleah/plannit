@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_05_171604) do
+ActiveRecord::Schema.define(version: 2022_07_08_165721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_171604) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "country_code"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -47,6 +48,9 @@ ActiveRecord::Schema.define(version: 2022_07_05_171604) do
     t.integer "category", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
+    t.string "country_code"
+    t.string "city"
     t.index ["country_id"], name: "index_posts_on_country_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -56,6 +60,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_171604) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "profile_image"
   end
 
   add_foreign_key "comments", "posts"
