@@ -15,7 +15,7 @@ function Home() {
 
   const globeEl = useRef();
 
-  const geoJson = "http://127.0.0.1:3000/countries";
+  const geoJson = "/countries";
   useEffect(() => {
     fetch(geoJson)
       .then((r) => r.json())
