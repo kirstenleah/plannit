@@ -1,8 +1,9 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorized, only: :create
+    before_action :authorized, except: [:create]
 
     def create
         user = User.find_by(username: params[:username])
+        puts "In session create method"
         if user&.authenticate(params[:password])
             session[:user_id] = user.id
             render json: user, status: :created
@@ -22,9 +23,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        user = User.find(params[:id])
-        user.destroy
-        header :no_content
+        session.delete :current_user
     end
 
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 // import { setQuaternionFromProperEuler } from "three/src/math/MathUtils";
 
-function LogIn() {
+function LogIn({ setUser, setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState([]);
@@ -25,7 +25,8 @@ function LogIn() {
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          setUsername(user);
+          setUser(user);
+          setIsAuthenticated(true);
           history.push("/");
         });
       } else {

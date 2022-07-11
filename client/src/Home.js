@@ -9,7 +9,7 @@ import { useHistory, useNavigate } from "react-router-dom";
 import Globe from "react-globe.gl";
 import Country from "./Country";
 
-function Home() {
+function Home({ user }) {
   const [countries, setCountries] = useState({ features: [] });
   const [hover, setHover] = useState();
 
