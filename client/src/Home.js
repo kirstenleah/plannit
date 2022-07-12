@@ -33,7 +33,7 @@ function Home({ user }) {
 
   function handleClick(e) {
     let countryName = e.properties.ADMIN;
-    let countryCode = e.properties.ISO_A2;
+    let countryCode = e.properties.ADM0_A3;
     console.log(countryName);
     history.push({
       pathname: "/country",

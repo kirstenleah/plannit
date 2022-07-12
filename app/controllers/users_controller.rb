@@ -17,12 +17,18 @@ rescue_from ActiveRecord::RecordInvalid, with: :invalid
         render json: {"user" => "here"}, status: :ok
     end
 
+    def update
+        u = User.find(params[:id])
+        u.update!(user_params)
+        render json: u
+    end
+
     private
     def user_params
-        params.permit(:username, :password)
+        params.permit(:username, :password, :profile_image)
     end
 
     def invalid
-        render json: {errors: "Username not found in database"}
+        render json: {errors: "User not found in database"}
     end
 end

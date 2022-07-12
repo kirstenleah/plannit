@@ -40,7 +40,7 @@ function LogIn({ setUser, setIsAuthenticated }) {
   return (
     <div id="login-container">
       <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <h2 className="card-city-country">Log In</h2>
         <div className="input-login">
           <label>Username</label>
           <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
@@ -51,7 +51,7 @@ function LogIn({ setUser, setIsAuthenticated }) {
           <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
         <button className="login-btn" type="submit">
-          Login
+          LOG IN
         </button>
       </form>
     </div>

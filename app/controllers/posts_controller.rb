@@ -10,6 +10,12 @@ class PostsController < ApplicationController
         render json: p
     end
 
+    def posts_by_country
+        puts "Params passed: #{params}"
+        p = Post.where(params[:country_id])
+        render json: p
+    end
+
     def create
         p = Post.create!(post_params)
         render json: p, status: :created
@@ -26,6 +32,16 @@ class PostsController < ApplicationController
         p.destroy
         head :no_content
     end
+
+    # delete '/posts/:id' do
+    #     p = Post.find_by(id: params[:id])
+    #     if !post.nil?
+    #       post.destroy
+    #       post.to_json
+    #     else
+    #       puts "Error deleting post"
+    #     end
+    #   end
 
     private
     def post_params

@@ -19,7 +19,10 @@ function HeaderNavBar({ user, isAuthenticated, setIsAuthenticated }) {
       </NavLink>
       {isAuthenticated ? (
         <NavLink to="/account" style={{ textDecoration: "none" }}>
-          <h3>Hello {user.username}</h3>
+          <h3 style={{ textDecoration: "none" }} className="navbar-username-welcome">
+            Hello {user.username}
+          </h3>
+          <img className="navbar-image-thumbnail" src={user.profile_image} />
         </NavLink>
       ) : null}
 
