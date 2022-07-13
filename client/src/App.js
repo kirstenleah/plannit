@@ -6,6 +6,7 @@ import HeaderNavBar from "./HeaderNavBar";
 import Country from "./Country";
 import LogIn from "./LogIn";
 import Account from "./Account";
+import CreateAccount from "./CreateAccount";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route path="/account">
             <Account user={user} />
+          </Route>
+          <Route path="/new">
+            <CreateAccount setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
           </Route>
         </Switch>
       </Router>

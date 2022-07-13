@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
     # before_action :authorized
+    
+    def country_images
+        p = Post.where(params[:id])
+        render json: p
+    end
 
     def index
         render json: Post.all

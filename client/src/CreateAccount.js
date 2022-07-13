@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
-import CreateAccount from "./CreateAccount";
-// import { setQuaternionFromProperEuler } from "three/src/math/MathUtils";
+import { useHistory } from "react-router-dom";
 
-function LogIn({ setUser, setIsAuthenticated }) {
+function CreateAccount({ setUser, setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState([]);
+  const [profileImage, setProfileImage] = useState("");
+
   const history = useHistory();
 
   function handleSubmit(e) {
@@ -14,34 +13,27 @@ function LogIn({ setUser, setIsAuthenticated }) {
     const user = {
       username,
       password,
+      profile_image: profileImage,
     };
-
-    //--------------FETCH--------------//
-    fetch("/login", {
+    fetch("/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
-    }).then((res) => {
-      if (res.ok) {
-        res.json().then((user) => {
-          setUser(user);
-          setIsAuthenticated(true);
-          history.push("/");
-        });
-      } else {
-        res.json().then((json) => setError(json.error, error));
-        alert("Incorrect name or password");
-      }
-    });
+    })
+      .then((r) => r.json())
+      .then((user) => {
+        setIsAuthenticated(true);
+        setUser(user);
+        history.push("/");
+      });
   }
-  //--------------FETCH--------------//
 
   return (
     <div id="login-container">
       <form onSubmit={handleSubmit}>
-        <h2 className="card-city-country">Log In</h2>
+        <h2 className="card-city-country">Create Account</h2>
         <div className="input-login">
           <label>Username</label>
           <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
@@ -51,16 +43,18 @@ function LogIn({ setUser, setIsAuthenticated }) {
           <label>Password</label>
           <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
+
+        <div className="input-login">
+          <label>Profile Image</label>
+          <input type="profile_image" id="profile_image" value={profileImage} onChange={(e) => setProfileImage(e.target.value)} />
+        </div>
+
         <button className="login-btn" type="submit">
-          LOG IN
+          SIGN UP
         </button>
       </form>
-
-      <NavLink to="/new">
-        <h2>Create Account</h2>
-      </NavLink>
     </div>
   );
 }
 
-export default LogIn;
+export default CreateAccount;

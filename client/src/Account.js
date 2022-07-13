@@ -17,15 +17,15 @@ function Account({ user }) {
   console.log(posts);
   //   console.log(user.id);
 
-  function handleDelete() {
-    fetch("/remove", {
+  function handleDelete(id) {
+    fetch(`/remove?id=${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
     })
       .then((r) => r.json())
-      .then(setPosts(posts.filter((p) => p.id !== posts.id)));
+      .then(setPosts(posts.filter((p) => p.id !== id)));
   }
 
   const renderPostsToAccount = posts.map((post) => {
@@ -43,8 +43,8 @@ function Account({ user }) {
               <h1 className="card-city-country">
                 {post.city}, {post.country.name}
               </h1>
-              <button className="card-edit-btn" onClick={handleDelete}>
-                Delete
+              <button className="card-edit-btn" onClick={() => handleDelete(post.id)}>
+                DELETE
               </button>
             </div>
           </div>
@@ -56,7 +56,6 @@ function Account({ user }) {
   return (
     <div className="account-container-padding">
       <h1 className="card-city-country">Your Posts:</h1>
-
       <div className="post-container">{renderPostsToAccount}</div>
     </div>
   );

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
   get "/posts/country/code", to: "posts#posts_by_country"
   delete "/remove", to: "posts#destroy"
+  get "/posts/images", to: "posts#country_images" 
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
  
  
