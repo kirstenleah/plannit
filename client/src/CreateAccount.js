@@ -15,6 +15,9 @@ function CreateAccount({ setUser, setIsAuthenticated }) {
       password,
       profile_image: profileImage,
     };
+
+    console.log("user object: ", JSON.stringify(user));
+
     fetch("/users", {
       method: "POST",
       headers: {
@@ -23,11 +26,7 @@ function CreateAccount({ setUser, setIsAuthenticated }) {
       body: JSON.stringify(user),
     })
       .then((r) => r.json())
-      .then((user) => {
-        setIsAuthenticated(true);
-        setUser(user);
-        history.push("/");
-      });
+      .then(history.push("/"));
   }
 
   return (
@@ -36,17 +35,23 @@ function CreateAccount({ setUser, setIsAuthenticated }) {
         <h2 className="card-city-country">Create Account</h2>
         <div className="input-login">
           <label>Username</label>
-          <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} name="username" />
         </div>
 
         <div className="input-login">
           <label>Password</label>
-          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} name="password" />
         </div>
 
         <div className="input-login">
           <label>Profile Image</label>
-          <input type="profile_image" id="profile_image" value={profileImage} onChange={(e) => setProfileImage(e.target.value)} />
+          <input
+            type="profile_image"
+            id="profile_image"
+            value={profileImage}
+            onChange={(e) => setProfileImage(e.target.value)}
+            name="profile_image"
+          />
         </div>
 
         <button className="login-btn" type="submit">

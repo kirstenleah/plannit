@@ -13,7 +13,6 @@ rescue_from ActiveRecord::RecordInvalid, with: :invalid
 
     def show
         u = User.find_by(id: session[:current_user])
-        puts "user: #{u}" 
         render json: {"user" => "here"}, status: :ok
     end
 

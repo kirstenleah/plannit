@@ -16,7 +16,6 @@ class PostsController < ApplicationController
     end
 
     def posts_by_country
-        puts "Params passed: #{params}"
         p = Post.where(params[:country_id])
         render json: p
     end
@@ -36,6 +35,10 @@ class PostsController < ApplicationController
         p = Post.find(params[:id])
         p.destroy
         head :no_content
+    end
+
+    def posts_by_country
+        render json: Post.where(country_id: params[:id])
     end
 
     # delete '/posts/:id' do
