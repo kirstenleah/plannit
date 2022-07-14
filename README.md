@@ -22,13 +22,14 @@ Getting started:
 
 **As a user, I can:**
 - Spin the globe to choose a potential travel destination
-- See other travelers' posts, including stories, images and positive reviews
-- Post my own stories or interact with (via likes/comments) other users' posts if I am logged in
+- See travelers' posts associated with the country I click
+- Create a new account
+- Post my own stories and edit my profile if I am logged in
 
 API:
 - Utilized geojson dataset for which I built a custom API endpoint
 
-As a user, I can:
+Main goals:
 - Spin the globe on homepage :heavy_check_mark:
 - Interact with globe (geo-location enabled) :heavy_check_mark:
 - GET posts by country :heavy_check_mark:
