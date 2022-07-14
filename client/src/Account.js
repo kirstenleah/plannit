@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 function Account({ user }) {
   const [posts, setPosts] = useState([]);
@@ -12,6 +13,8 @@ function Account({ user }) {
   });
 
   const [countries, setCountries] = useState([]);
+
+  const history = useHistory();
 
   // get all the posts
   useEffect(() => {
@@ -49,6 +52,10 @@ function Account({ user }) {
       .then(setPosts(posts.filter((p) => p.id !== id)));
   }
 
+  function addNewPost(newPost) {
+    setPosts([...posts, newPost]);
+  }
+
   function handleSubmit(e) {
     console.log("form: ", form);
     e.preventDefault();
@@ -60,7 +67,16 @@ function Account({ user }) {
       body: JSON.stringify(form),
     })
       .then((r) => r.json())
-      .then((output) => console.log(output));
+      .then((post) => addNewPost(post));
+    setForm({
+      user_id: user.id,
+      country_id: "",
+      content: "",
+      category: null,
+      image: "",
+      city: "",
+    });
+
     // setForm({
     //     user_id: user.id,
     //     country_id: country.id,

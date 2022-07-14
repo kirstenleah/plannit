@@ -121,6 +121,7 @@ h1 {
 .country-header {
   font-family: "Nunito";
   font-size: 48px;
+  cursor: pointer;
   padding: 4rem;
   color: #343434;
   /* text-decoration: underline; */

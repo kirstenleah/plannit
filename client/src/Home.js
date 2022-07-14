@@ -5,7 +5,7 @@ License: https://github.com/vasturiano/react-globe.gl/blob/master/LICENSE
 */
 
 import React, { useEffect, useState, useRef } from "react";
-import { useHistory, useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Globe from "react-globe.gl";
 import Country from "./Country";
 
