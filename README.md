@@ -12,16 +12,20 @@ Getting started:
 5. Install Postgres
 
 **Home: A draggable globe with geo-location enabled to select a country**
-https://user-images.githubusercontent.com/99378787/178910615-d4435a34-e322-416b-abb0-45d4040d1398.png
+
+(https://user-images.githubusercontent.com/99378787/178910615-d4435a34-e322-416b-abb0-45d4040d1398.png)
 
 **Sample results after clicking country**
-<img width="1130" alt="image" src="![image](https://user-images.githubusercontent.com/99378787/178910732-34f7a2d2-e5e7-4391-b458-ca80e7a79bcb.png)">
+
+(https://user-images.githubusercontent.com/99378787/178910732-34f7a2d2-e5e7-4391-b458-ca80e7a79bcb.png)
 
 **Filter by Lodging, Food, or Experiences**
-<img width="1130" alt="image" src="![image](https://user-images.githubusercontent.com/99378787/178910847-8413e511-08a3-4d56-99d0-db51b80685f6.png)">
+
+(https://user-images.githubusercontent.com/99378787/178910847-8413e511-08a3-4d56-99d0-db51b80685f6.png)
 
 **Account page where I can see/delete my posts, upload a new post or edit my profile**
-<img width="1130" alt="image" src="![image](https://user-images.githubusercontent.com/99378787/178911242-51e6e48f-57f6-47cd-8ed8-89c571c156dc.png)">
+
+(https://user-images.githubusercontent.com/99378787/178911242-51e6e48f-57f6-47cd-8ed8-89c571c156dc.png)
 
 
 **As a user, I can:**
