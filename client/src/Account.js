@@ -63,7 +63,6 @@ function Account({ user, setUser }) {
   }
 
   function handleSubmit(e) {
-    console.log("form: ", form);
     e.preventDefault();
     fetch("/posts", {
       method: "POST",

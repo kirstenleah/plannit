@@ -29,8 +29,6 @@ function App() {
       });
   }, []);
 
-  console.log("User object in App.js: ", user);
-
   return (
     <div className="App">
       <Router>

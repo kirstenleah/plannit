@@ -12,8 +12,6 @@ function HeaderNavBar({ user, isAuthenticated, setIsAuthenticated }) {
     });
   }
 
-  console.log("User data in HeaderNavBar: ", user);
-
   return (
     <nav className="nav-container">
       <NavLink exact to="/" style={{ textDecoration: "none" }}>

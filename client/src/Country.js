@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function Country({ country }) {
-  // console.log(country);
   const location = useLocation();
   const [countryPosts, setCountryPosts] = useState([]);
   const [filter, setFilter] = useState("");
@@ -24,8 +23,7 @@ function Country({ country }) {
     }
   });
 
-  // We are using this fetch to snag the country id from the db via the country code from the object passed
-  // down by the click on the country.
+  // Using this fetch to get country id from the db via the country code from the object passed down by the click on the country.
   useEffect(() => {
     fetch(`/country_code?code=${countryCode}`, {
       method: "GET",
@@ -63,7 +61,6 @@ function Country({ country }) {
             <h2 className="post-user-name">{post.user.username}</h2>
             <img className="card-user-thumbnail" src={post.user.profile_image} alt="user_profile_photo" />
             <p>{post.content}</p>
-            {/* <p>{post.category}</p> */}
             <img className="travel-image-thumbnail" src={post.image} alt="traveler_photo" />
             <h1 className="card-city-country">
               {post.city}, {post.country.name}
@@ -79,7 +76,6 @@ function Country({ country }) {
       <div className="country-header" onClick={() => setFilter("")}>
         {location.state.country.toUpperCase()}
       </div>
-      {/* <h2>{location.state.countryCode}</h2> */}
       <div>{renderImages}</div>
       {/* <img src={"https://media-cdn.tripadvisor.com/media/photo-s/1c/62/f2/22/sirimahannop.jpg"} /> */}
       <div className="filter-posts-buttons-container">

@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import Globe from "react-globe.gl";
 import Country from "./Country";
 
-function Home({ user }) {
+function Home() {
   const [countries, setCountries] = useState({ features: [] });
   const [hover, setHover] = useState();
 
@@ -25,8 +25,6 @@ function Home({ user }) {
     // console.log(globe);
     // globe.controls().rotateSpeed = 3;
   }, []);
-
-  // console.log(countries);
 
   const countryNames = countries.features.map((d) => d.properties.ADMIN);
   const history = useHistory();

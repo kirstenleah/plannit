@@ -16,8 +16,6 @@ function CreateAccount({ setUser, setIsAuthenticated }) {
       profile_image: profileImage,
     };
 
-    console.log("user object: ", JSON.stringify(user));
-
     fetch("/users", {
       method: "POST",
       headers: {
