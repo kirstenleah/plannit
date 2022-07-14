@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-function Account({ user }) {
+function Account({ user, setUser }) {
   const [posts, setPosts] = useState([]);
   const [form, setForm] = useState({
     user_id: user.id,
@@ -13,6 +13,12 @@ function Account({ user }) {
   });
 
   const [countries, setCountries] = useState([]);
+
+  const [profileUpdates, setProfileUpdates] = useState({
+    username: "",
+    password: "",
+    profile_image: "",
+  });
 
   const history = useHistory();
 
@@ -91,6 +97,31 @@ function Account({ user }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
+  /// ----------------Update user profile---------------- ///
+
+  function handleProfileSubmit(e) {
+    e.preventDefault();
+    fetch(`/update_profile?id=${user.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(profileUpdates),
+    })
+      .then((r) => r.json())
+      .then(setUser);
+    // .then(history.push("/"))
+    setProfileUpdates({
+      username: "",
+      password: "",
+      profile_image: "",
+    });
+  }
+
+  function handleProfileChange(e) {
+    setProfileUpdates({ ...profileUpdates, [e.target.name]: e.target.value });
+  }
+
   const renderPostsToAccount = posts.map((post) => {
     if (post.user.id === user.id) {
       return (
@@ -162,8 +193,36 @@ function Account({ user }) {
         </form>
       </div>
 
-      <h1 className="card-city-country">Your Posts:</h1>
-      <div className="post-container">{renderPostsToAccount}</div>
+      <div>
+        <h1 className="card-city-country">Your Posts:</h1>
+        <div className="post-container">{renderPostsToAccount}</div>
+        <br></br>
+        <div className="post-form-container">
+          <form onSubmit={handleProfileSubmit}>
+            <h2 className="card-city-country">Update Profile</h2>
+            <br></br>
+            <div className="input-login">
+              <label className="form-label">Username</label>
+              <br></br>
+              <input onChange={handleProfileChange} value={profileUpdates.username} name="username" />
+            </div>
+            <div className="input-login">
+              <label className="form-label">Password</label>
+              <br></br>
+              <input onChange={handleProfileChange} value={profileUpdates.password} name="password" />
+            </div>
+            <div className="input-login">
+              <label className="form-label">Image</label>
+              <br></br>
+              <input onChange={handleProfileChange} value={profileUpdates.profile_image} name="profile_image" />
+            </div>
+
+            <button className="login-btn" type="submit">
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

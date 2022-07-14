@@ -26,7 +26,6 @@ function LogIn({ setUser, setIsAuthenticated }) {
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          console.log("user data in login: ", user);
           setUser(user);
           setIsAuthenticated(true);
           history.push("/");
@@ -57,8 +56,10 @@ function LogIn({ setUser, setIsAuthenticated }) {
         </button>
       </form>
 
-      <NavLink to="/new">
-        <h2>Create Account</h2>
+      <NavLink to="/new" style={{ textDecoration: "none" }}>
+        <h3 style={{ textDecoration: "none" }} className="form-label">
+          Create Account
+        </h3>
       </NavLink>
     </div>
   );

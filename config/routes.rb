@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   # Users Routes
   #
   get "/me", to: "users#show"
+  patch "/update_profile", to: "users#update"
   
   #
   # Posts Routes

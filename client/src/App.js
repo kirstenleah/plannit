@@ -46,7 +46,7 @@ function App() {
             <Country user={user} />
           </Route>
           <Route path="/account">
-            <Account user={user} />
+            <Account user={user} setUser={setUser} />
           </Route>
           <Route path="/new">
             <CreateAccount setUser={setUser} setIsAuthenticated={setIsAuthenticated} />

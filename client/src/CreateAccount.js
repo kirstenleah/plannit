@@ -26,7 +26,8 @@ function CreateAccount({ setUser, setIsAuthenticated }) {
       body: JSON.stringify(user),
     })
       .then((r) => r.json())
-      .then(history.push("/"));
+      .then(history.push("/login"))
+      .then(alert("Successfully created account"));
   }
 
   return (
