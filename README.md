@@ -38,7 +38,6 @@ As a user, I can:
 - Create a new post :heavy_check_mark:
 - Categorize posts by lodging, food, experiences associated with each country :heavy_check_mark:
 - See posts including text and images :heavy_check_mark:
-- Acquire domain name/host with Google
 
 Stretch goals:
 - Hyperlink to businesses from posts
