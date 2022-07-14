@@ -151,6 +151,11 @@ h1 {
   color: #193f43b2;
 }
 
+.filter-btn:focus {
+  background-color: #dddddd;
+  color: #193f43b2;
+}
+
 /*Posts*/
 .post-container {
   width: 100%;
@@ -179,6 +184,7 @@ h1 {
 .post-user-name {
   font-size: 18px;
   font-family: "Nunito";
+  color: #484848;
 }
 
 p {
@@ -251,5 +257,6 @@ p {
 .form-label {
   font-size: 18px;
   font-family: "Nunito";
-  color: #000000;
+  padding: 10px;
+  color: #484848;
 }
