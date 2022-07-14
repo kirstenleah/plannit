@@ -12,7 +12,7 @@ Getting started:
 5. Install Postgres
 
 **Home: A draggable globe with geo-location enabled to select a country**
-<img width="1128" alt="image" src="![image](https://user-images.githubusercontent.com/99378787/178910615-d4435a34-e322-416b-abb0-45d4040d1398.png)">
+(https://user-images.githubusercontent.com/99378787/178910615-d4435a34-e322-416b-abb0-45d4040d1398.png)
 
 **Sample results after clicking country**
 <img width="1130" alt="image" src="![image](https://user-images.githubusercontent.com/99378787/178910732-34f7a2d2-e5e7-4391-b458-ca80e7a79bcb.png)">
