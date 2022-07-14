@@ -120,16 +120,17 @@ h1 {
 /*Country page*/
 .country-header {
   font-family: "Nunito";
-  font-size: 48px;
+  font-size: 56px;
   cursor: pointer;
-  padding: 4rem;
-  color: #343434;
+  padding: 6rem;
+  color: #484848;
   /* text-decoration: underline; */
 }
 
 .filter-posts-buttons-container {
   display: flex;
   justify-content: center;
+  padding: 2rem;
   /* padding: 1rem; */
   /* background-color: #981616; */
 }
@@ -154,6 +155,24 @@ h1 {
 .filter-btn:focus {
   background-color: #dddddd;
   color: #193f43b2;
+}
+
+.images-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.images {
+  justify-content: center;
+  display: flex;
+  height: 20rem;
+  margin: 8px;
+  flex-shrink: 0;
+  /* border-radius: 5%; */
 }
 
 /*Posts*/
@@ -226,7 +245,7 @@ p {
   justify-content: space-around;
   width: 500px;
   background-color: #a2a2a23a;
-  height: 900px;
+  height: 850px;
   margin: 10px;
   border-radius: 1rem;
   padding: 2rem;

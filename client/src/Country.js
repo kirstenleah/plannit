@@ -23,6 +23,11 @@ function Country({ country }) {
     }
   });
 
+  const renderImages = countryPosts.map((post) => {
+    console.log(post.image);
+    return <img className="images" src={post.image} alt="header_image" />;
+  });
+
   // Using this fetch to get country id from the db via the country code from the object passed down by the click on the country.
   useEffect(() => {
     fetch(`/country_code?code=${countryCode}`, {
@@ -47,12 +52,6 @@ function Country({ country }) {
       .then(setCountryPosts);
   }, [countryId]);
 
-  function renderImages() {
-    countryPosts.map((post) => {
-      return post.image.limit(5);
-    });
-  }
-
   const renderPostsToCountry = filteredPosts.map((post) => {
     return (
       <div post={post} key={post.id}>
@@ -76,7 +75,7 @@ function Country({ country }) {
       <div className="country-header" onClick={() => setFilter("")}>
         {location.state.country.toUpperCase()}
       </div>
-      <div>{renderImages}</div>
+      <div className="images-container">{renderImages}</div>
       {/* <img src={"https://media-cdn.tripadvisor.com/media/photo-s/1c/62/f2/22/sirimahannop.jpg"} /> */}
       <div className="filter-posts-buttons-container">
         <button className="filter-btn" onClick={() => setFilter("lodging")} name="lodging">
