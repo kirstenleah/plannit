@@ -11,6 +11,13 @@ Getting started:
 4. Ruby environment setup
 5. Install Postgres
 
+Technologies used:
+- React
+- Ruby on Rails
+- Custom CSS
+- Postgres
+- Deployed to Heroku here: https://sleepy-sea-85704.herokuapp.com/
+
 **Home: A draggable globe with geo-location enabled to select a country:**
 
 (https://user-images.githubusercontent.com/99378787/178910615-d4435a34-e322-416b-abb0-45d4040d1398.png)
