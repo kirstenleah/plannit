@@ -3,6 +3,8 @@
 Plannit: 
 *A social media app for travelers to share the best of the best from their adventures around the world, and get inspiration for their next vacation*
 
+[Video walkthrough](https://youtu.be/T7L-UwnsEps)
+
 Getting started: 
 
 1. Globe will not render with any React version after v.17
